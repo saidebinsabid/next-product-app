@@ -109,6 +109,8 @@ touch .env.local
 
 # Run development server
 npm run dev
+
+```
 ---
 
 ## 🙌 Thank You for Visiting NextShop!
