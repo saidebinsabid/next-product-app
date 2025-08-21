@@ -1,3 +1,4 @@
+// auth/[...nextauth]/route.jsx
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import clientPromise from "@/lib/mongodb";
@@ -14,7 +15,9 @@ export const authOptions = {
         password: { label: "Password" },
       },
       async authorize(credentials) {
-        const usersCollection = client.db("shopDB").collection("users");
+        const usersCollection = client
+          .db(process.env.DB_NAME)
+          .collection("users");
         const user = await usersCollection.findOne({
           email: credentials.email,
         });
