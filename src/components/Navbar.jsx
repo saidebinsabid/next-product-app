@@ -23,7 +23,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm px-4">
+    <div className="navbar bg-[#FAF9F6] shadow-sm px-4 sticky top-0 right-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -67,7 +67,7 @@ const Navbar = () => {
             </button>
           </>
         ) : (
-          <Link href="/login" className="btn btn-primary">
+          <Link href="/login" className="btn bg-[#7B3F00] text-white">
             Login
           </Link>
         )}
