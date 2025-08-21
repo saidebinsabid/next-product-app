@@ -1,11 +1,9 @@
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 
-export async function GET(req) {
+export async function GET(req, { params }) { // destructure params here
   try {
-    // Extract id from the request URL
-    const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id"); // Not using params directly
+    const { id } = params; // Now this works with /api/products/[id]
 
     if (!id) {
       return new Response(JSON.stringify({ error: "Missing product id" }), {

@@ -8,7 +8,7 @@ export default function HomeGallery() {
 
   useEffect(() => {
     async function fetchProducts() {
-      const res = await fetch("/api/products");
+      const res = await fetch(`/api/products/[id]?id=${id}`);
       const data = await res.json();
       setProducts(data.slice(0, 5));
     }
@@ -22,7 +22,6 @@ export default function HomeGallery() {
       <h2 className="text-2xl font-bold mb-8 text-center">Featured Products</h2>
 
       <div className="flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-6 max-w-6xl mx-auto">
-
         {/* Left small images (top on small screens) */}
         <div className="flex flex-col gap-4 order-1 lg:order-1">
           {products[0] && (
